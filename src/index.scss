@@ -1,0 +1,23 @@
+@use "@progress/kendo-theme-default/scss/all.scss" as * with (
+  $kendo-enable-typography: true
+);
+
+:root {
+  --kendo-font-family-sans: "Nunito Sans", sans-serif;
+}
+
+html {
+  font-family: var(--kendo-font-family-sans);
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bolder {
+  font-weight: 800;
+}
+
+.boldest {
+  font-weight: 900;
+}
