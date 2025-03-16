@@ -1,0 +1,51 @@
+@use "sass:map";
+@use "@progress/kendo-theme-default/scss/all.scss" as * with (
+  $kendo-enable-typography: true
+);
+
+:root {
+  --kendo-font-family-sans: "Nunito Sans", sans-serif;
+  --kendo-color-app-surface: #f4f6fa;
+}
+
+html {
+  font-family: var(--kendo-font-family-sans);
+  height: 100%;
+  box-sizing: border-box;
+  background: #f4f6fa;
+}
+
+body {
+  height: 100%;
+  min-height: 100vh;
+  background: #f4f6fa;
+}
+
+.root {
+  height: 100%;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bolder {
+  font-weight: 800;
+}
+
+.boldest {
+  font-weight: 900;
+}
+
+.surface {
+  background: #f4f6fa;
+}
+
+.success {
+  color: map.get($kendo-colors, "success");
+}
+
+.container {
+  padding-left: 40px;
+  padding-right: 40px;
+}

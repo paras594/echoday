@@ -1,0 +1,23 @@
+.emoji-container {
+  display: flex;
+  place-items: center;
+  padding: 10px;
+  border-radius: 100px;
+  border: none;
+  background: transparent;
+  transform: scale(1);
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+
+  &.active {
+    background: #ffd2cf;
+  }
+
+  img {
+    pointer-events: none;
+  }
+}

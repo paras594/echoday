@@ -1,0 +1,31 @@
+.form {
+  width: 90%;
+  max-width: 420px;
+}
+.label {
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+.input {
+  font-size: 16px;
+  padding: 8px 12px !important;
+}
+
+.submit-button {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.disclaimer {
+  margin-top: 80px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+
+  p {
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 0;
+  }
+}
