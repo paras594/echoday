@@ -49,3 +49,21 @@ body {
   padding-left: 40px;
   padding-right: 40px;
 }
+
+.full-height {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e6e6e6;
+  border-radius: 20px;
+  outline: 0;
+}

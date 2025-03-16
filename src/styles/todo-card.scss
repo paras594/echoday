@@ -1,0 +1,12 @@
+.todo-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 4px;
+  border-radius: 4px;
+  transition: background 0.2s linear;
+
+  &:hover {
+    background: var(--kendo-color-surface);
+  }
+}

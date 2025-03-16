@@ -16,7 +16,7 @@ export const CalendarBlock = () => {
 
   return (
     <Calendar
-      calendarType="hebrew"
+      calendarType="gregory"
       className="calendar"
       tileClassName="calendar-tile"
       onChange={handleChange}
