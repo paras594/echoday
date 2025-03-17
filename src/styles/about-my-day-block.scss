@@ -1,0 +1,45 @@
+.card-body {
+  padding-block-start: 0.5rem;
+}
+.about-textarea {
+  border: 0;
+  display: block;
+  height: 1600px;
+  font-family: cursive;
+  letter-spacing: 2px;
+  font-size: 16px;
+  line-height: 27px;
+  resize: none;
+  width: 100%;
+
+  background-image: -moz-linear-gradient(
+    top,
+    transparent,
+    transparent 26px,
+    var(--kendo-color-border) 0px
+  );
+  background-image: -webkit-linear-gradient(
+    top,
+    transparent,
+    transparent 26px,
+    var(--kendo-color-border) 0
+  );
+
+  -webkit-background-size: 100% 27px;
+  background-size: 100% 27px;
+
+  &:focus,
+  &:focus-within {
+    box-shadow: none;
+  }
+
+  textarea {
+    display: block;
+    height: 1600px;
+
+    &:focus {
+      box-shadow: none !important;
+      border: none;
+    }
+  }
+}

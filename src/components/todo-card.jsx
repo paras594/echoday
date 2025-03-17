@@ -15,7 +15,7 @@ export const TodoCard = ({ todo, onDone }) => {
         onChange={() => onDone(todo)}
       />
       <Typography.p
-        fontSize="medium"
+        fontSize="large"
         style={{
           marginBottom: 0,
           textDecoration: todo.isDone ? "line-through" : "none",

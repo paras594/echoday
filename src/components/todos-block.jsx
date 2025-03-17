@@ -24,13 +24,7 @@ export const TodosBlock = ({ onActionClick }) => {
         icon={listUnorderedIcon}
         onActionClick={onActionClick}
       />
-      <CardBody
-        style={{
-          maxHeight: "100%",
-          height: "100%",
-          overflowY: "auto",
-        }}
-      >
+      <CardBody className="scrollable">
         <StackLayout orientation="vertical" gap={4}>
           {todos?.[activeDate]?.map((todo) => (
             <TodoCard key={todo.id} todo={todo} onDone={onDone} />

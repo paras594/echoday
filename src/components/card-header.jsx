@@ -35,13 +35,15 @@ export const CardHeader = ({ title, icon, onActionClick }) => {
       </div>
       <CardTitle style={{ fontWeight: 700 }}>{title}</CardTitle>
       <div style={{ flexGrow: 1 }} />
-      <Button
-        themeColor={"primary"}
-        svgIcon={plusIcon}
-        type="button"
-        fillMode={"outline"}
-        onClick={onActionClick}
-      />
+      {onActionClick && (
+        <Button
+          themeColor={"primary"}
+          svgIcon={plusIcon}
+          type="button"
+          fillMode={"outline"}
+          onClick={onActionClick}
+        />
+      )}
     </KendoCardHeader>
   );
 };

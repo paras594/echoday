@@ -6,12 +6,9 @@ const INITIAL_STATE = {
 };
 
 export const useTodosStore = create(
-  immer((set, get) => ({
+  immer((set) => ({
     // state
     ...INITIAL_STATE,
-
-    // getters
-    getTodoById: (date, id) => get().todos.find((todo) => todo.id === id),
 
     // setters
     addTodo: (date, todo) =>
