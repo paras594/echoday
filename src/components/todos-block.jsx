@@ -5,6 +5,8 @@ import { listUnorderedIcon } from "@progress/kendo-svg-icons";
 import { TodoCard } from "./todo-card";
 import { useTodosStore } from "../store/use-todos-store";
 import { useCalendarStore } from "../store/use-calendar-store";
+import todoListIllustration from "../assets/todo-list-illustration.svg";
+import { NoDataBlock } from "./no-data-block";
 
 export const TodosBlock = ({ onActionClick }) => {
   const activeDate = useCalendarStore((state) => state.activeDate);
@@ -25,11 +27,18 @@ export const TodosBlock = ({ onActionClick }) => {
         onActionClick={onActionClick}
       />
       <CardBody className="scrollable">
-        <StackLayout orientation="vertical" gap={4}>
-          {todos?.[activeDate]?.map((todo) => (
-            <TodoCard key={todo.id} todo={todo} onDone={onDone} />
-          ))}
-        </StackLayout>
+        {!todos?.[activeDate]?.length ? (
+          <NoDataBlock
+            illustration={todoListIllustration}
+            caption="Got something in mind? Add it to your list!"
+          />
+        ) : (
+          <StackLayout orientation="vertical" gap={4}>
+            {todos?.[activeDate]?.map((todo) => (
+              <TodoCard key={todo.id} todo={todo} onDone={onDone} />
+            ))}
+          </StackLayout>
+        )}
       </CardBody>
     </Card>
   );

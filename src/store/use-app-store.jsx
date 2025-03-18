@@ -12,5 +12,6 @@ export const useAppStore = create(
 
     // setters
     setActiveDialog: (dialog) => set({ activeDialog: dialog }),
+    reset: () => set(INITIAL_STATE),
   }))
 );

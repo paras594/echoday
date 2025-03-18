@@ -1,6 +1,19 @@
 .card-body {
-  padding-block-start: 0.5rem;
+  padding-block-start: 4px;
 }
+
+.about-prompt {
+  position: sticky;
+  top: 0;
+  padding: 8px 16px 0;
+  margin: 0;
+  background: #fff;
+
+  p {
+    margin: 0;
+  }
+}
+
 .about-textarea {
   border: 0;
   display: block;
@@ -36,6 +49,8 @@
   textarea {
     display: block;
     height: 1600px;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
 
     &:focus {
       box-shadow: none !important;

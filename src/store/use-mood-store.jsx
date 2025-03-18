@@ -1,19 +1,27 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
+import { persist, createJSONStorage } from "zustand/middleware";
 
 const INITIAL_STATE = {
   moodsMap: {}, // map of moods by date
 };
 
 export const useMoodStore = create(
-  immer((set) => ({
-    // state
-    ...INITIAL_STATE,
+  persist(
+    immer((set) => ({
+      // state
+      ...INITIAL_STATE,
 
-    // setters
-    addMood: (date, mood) =>
-      set((state) => ({ moodsMap: { ...state.moodsMap, [date]: mood } })),
-  }))
+      // setters
+      addMood: (date, mood) =>
+        set((state) => ({ moodsMap: { ...state.moodsMap, [date]: mood } })),
+      reset: () => set(INITIAL_STATE),
+    })),
+    {
+      name: "about-my-day-store",
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
 );
 
 // generate a map of emojis with their mood label

@@ -33,7 +33,7 @@ function Home() {
         <div style={{ height: "28px" }} />
         <GridLayout
           cols={generate12ColGrid()}
-          rows={[{ height: 370 }, { height: 370 }]}
+          rows={[{ height: 370 }, { height: 380 }]}
           gap={{ cols: 20, rows: 20 }}
         >
           <GridLayoutItem colSpan={5}>

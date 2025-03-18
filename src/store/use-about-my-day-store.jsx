@@ -3,21 +3,20 @@ import { immer } from "zustand/middleware/immer";
 import { persist, createJSONStorage } from "zustand/middleware";
 
 const INITIAL_STATE = {
-  userName: "",
-  userPassword: "",
-  isLoggedIn: false,
+  aboutMyDay: {},
 };
 
-export const useUserStore = create(
+export const useAboutMyDayStore = create(
   persist(
     immer((set) => ({
       // state
       ...INITIAL_STATE,
 
       // setters
-      setUserName: (name) => set({ userName: name }),
-      setUserPassword: (password) => set({ userPassword: password }),
-      setIsLoggedIn: (status) => set({ isLoggedIn: status }),
+      updateAboutMyDay: (date, aboutMyDay) =>
+        set((state) => {
+          state.aboutMyDay[date] = aboutMyDay;
+        }),
       reset: () => set(INITIAL_STATE),
     })),
     {
