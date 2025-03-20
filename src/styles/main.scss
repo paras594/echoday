@@ -73,3 +73,15 @@ body {
   height: 100%;
   overflow-y: auto;
 }
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.text-container {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits text to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

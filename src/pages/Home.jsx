@@ -46,10 +46,12 @@ function Home() {
             <TodosBlock onActionClick={() => setActiveDialog("add-todo")} />
           </GridLayoutItem>
           <GridLayoutItem colSpan={4}>
-            <NotesBlock />
+            <NotesBlock onActionClick={() => setActiveDialog("add-note")} />
           </GridLayoutItem>
           <GridLayoutItem colSpan={3}>
-            <RemindersBlock />
+            <RemindersBlock
+              onActionClick={() => setActiveDialog("add-reminder")}
+            />
           </GridLayoutItem>
           <GridLayoutItem colSpan={5}>
             <MemoriesBlock />

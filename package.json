@@ -17,6 +17,7 @@
     "@progress/kendo-react-buttons": "^10.0.0",
     "@progress/kendo-react-common": "^10.0.0",
     "@progress/kendo-react-dialogs": "^10.0.0",
+    "@progress/kendo-react-dropdowns": "^10.0.0",
     "@progress/kendo-react-indicators": "^10.0.0",
     "@progress/kendo-react-inputs": "^10.0.0",
     "@progress/kendo-react-labels": "^10.0.0",

@@ -8,8 +8,6 @@ import { formatDate, parseDate } from "../utils/date-formatters";
 export const CalendarBlock = () => {
   const { activeDate, setActiveDate } = useCalendarStore();
 
-  console.log({ activeDate });
-
   const handleChange = (date) => {
     setActiveDate(formatDate(date));
   };

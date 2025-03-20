@@ -14,8 +14,6 @@ export const TodosBlock = ({ onActionClick }) => {
   const updateTodo = useTodosStore((state) => state.updateTodo);
 
   const onDone = (todo) => {
-    const newTod = { ...todo, isDone: !todo.isDone };
-    console.log({ newTod });
     updateTodo(activeDate, { ...todo, isDone: !todo.isDone });
   };
 
