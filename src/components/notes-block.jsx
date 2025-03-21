@@ -53,6 +53,7 @@ export const NotesBlock = ({ onActionClick }) => {
           </div>
         )}
       </CardBody>
+      <div style={{ height: 20 }} />
     </Card>
   );
 };
