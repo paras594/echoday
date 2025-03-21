@@ -14,8 +14,8 @@ export const LoginForm = () => {
   const { setUserName, setUserPassword, setIsLoggedIn } = useUserStore();
 
   const [formValues, setFormValues] = useState({
-    username: "",
-    password: "",
+    username: "John Doe",
+    password: "123",
   });
 
   const [loading, setLoading] = useState(false);

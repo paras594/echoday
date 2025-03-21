@@ -3,8 +3,10 @@ import { Typography } from "@progress/kendo-react-common";
 import { Checkbox } from "@progress/kendo-react-inputs";
 
 import "../styles/todo-card.scss";
+import { trashIcon } from "@progress/kendo-svg-icons";
+import { Button } from "@progress/kendo-react-buttons";
 
-export const TodoCard = ({ todo, onDone }) => {
+export const TodoCard = ({ todo, onDone, onDelete }) => {
   return (
     <div className="todo-card">
       <Checkbox
@@ -14,15 +16,23 @@ export const TodoCard = ({ todo, onDone }) => {
         size={"large"}
         onChange={() => onDone(todo)}
       />
-      <Typography.p
-        fontSize="large"
-        style={{
-          marginBottom: 0,
-          textDecoration: todo.isDone ? "line-through" : "none",
-        }}
-      >
-        {todo.task}
-      </Typography.p>
+      <div style={{ flex: 1 }}>
+        <Typography.p
+          fontSize="large"
+          style={{
+            marginBottom: 0,
+            textDecoration: todo.isDone ? "line-through" : "none",
+          }}
+        >
+          {todo.task}
+        </Typography.p>
+      </div>
+      <Button
+        onClick={() => onDelete(todo)}
+        svgIcon={trashIcon}
+        themeColor={"error"}
+        fillMode={"flat"}
+      />
     </div>
   );
 };

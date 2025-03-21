@@ -12,9 +12,15 @@ export const TodosBlock = ({ onActionClick }) => {
   const activeDate = useCalendarStore((state) => state.activeDate);
   const todos = useTodosStore((state) => state.todos);
   const updateTodo = useTodosStore((state) => state.updateTodo);
+  const removeTodo = useTodosStore((state) => state.removeTodo);
 
   const onDone = (todo) => {
     updateTodo(activeDate, { ...todo, isDone: !todo.isDone });
+  };
+
+  const onDelete = (todo) => {
+    console.log({ todo });
+    removeTodo(activeDate, todo);
   };
 
   return (
@@ -33,7 +39,12 @@ export const TodosBlock = ({ onActionClick }) => {
         ) : (
           <StackLayout orientation="vertical" gap={4}>
             {todos?.[activeDate]?.map((todo) => (
-              <TodoCard key={todo.id} todo={todo} onDone={onDone} />
+              <TodoCard
+                key={todo.id}
+                todo={todo}
+                onDone={onDone}
+                onDelete={onDelete}
+              />
             ))}
           </StackLayout>
         )}

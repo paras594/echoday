@@ -1,19 +1,28 @@
 import { Card, CardBody } from "@progress/kendo-react-layout";
 import { pencilIcon } from "@progress/kendo-svg-icons";
-import React from "react";
+import React, { useMemo } from "react";
 import { CardHeader } from "./card-header";
 import { NoDataBlock } from "./no-data-block";
 import notesIllustration from "../assets/notes-illustration.svg";
 import { useNotesStore } from "../store/use-notes-store";
 import { useCalendarStore } from "../store/use-calendar-store";
 import { NoteCard } from "./note-card";
+import { useAppStore } from "../store/use-app-store";
+
+const randomValue = (num) => Math.floor(Math.random() * num);
 
 export const NotesBlock = ({ onActionClick }) => {
   const activeDate = useCalendarStore((state) => state.activeDate);
   const { notes, removeNote } = useNotesStore((state) => state);
+  const { setActiveDialog } = useAppStore((state) => state);
+  const val = useMemo(() => randomValue(100), [activeDate]);
 
   const handleDelete = (note) => {
     removeNote(activeDate, note);
+  };
+
+  const onClick = (note) => {
+    setActiveDialog("edit-note", { note });
   };
 
   return (
@@ -32,11 +41,13 @@ export const NotesBlock = ({ onActionClick }) => {
           />
         ) : (
           <div style={{ display: "grid", gap: 8 }}>
-            {notes?.[activeDate]?.map((note) => (
+            {notes?.[activeDate]?.map((note, i) => (
               <NoteCard
+                index={i + val}
                 key={note.id}
                 text={note.text}
                 onDelete={() => handleDelete(note)}
+                onClick={() => onClick(note)}
               />
             ))}
           </div>

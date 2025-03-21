@@ -7,18 +7,22 @@ import { useCalendarStore } from "../store/use-calendar-store";
 import { uniqueId } from "../utils/unique-id";
 import { useNotesStore } from "../store/use-notes-store";
 
-export const AddNoteForm = () => {
-  const [value, setValue] = useState("");
+export const AddNoteForm = ({ edit, note }) => {
+  const [value, setValue] = useState(edit ? note.text : "");
   const setActiveDialog = useAppStore((state) => state.setActiveDialog);
   const activeDate = useCalendarStore((state) => state.activeDate);
-  const { addNote } = useNotesStore((state) => state);
+  const { addNote, updateNote } = useNotesStore((state) => state);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!value) return;
 
-    addNote(activeDate, { id: uniqueId(), text: value });
+    if (edit) {
+      updateNote(activeDate, { ...note, text: value });
+    } else {
+      addNote(activeDate, { id: uniqueId(), text: value });
+    }
 
     setActiveDialog(null);
   };

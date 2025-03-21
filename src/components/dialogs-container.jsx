@@ -9,10 +9,11 @@ const TITLES_MAP = {
   "add-todo": "Add todo",
   "add-reminder": "Add reminder",
   "add-note": "Add note",
+  "edit-note": "Edit note",
 };
 
 export const DialogsContainer = () => {
-  const { activeDialog, setActiveDialog } = useAppStore((state) => state);
+  const { activeDialog, setActiveDialog, meta } = useAppStore((state) => state);
 
   const closeDialog = () => {
     setActiveDialog(null);
@@ -31,7 +32,9 @@ export const DialogsContainer = () => {
     >
       {activeDialog === "add-todo" && <AddTodoForm />}
       {activeDialog === "add-reminder" && <AddReminderForm />}
-      {activeDialog === "add-note" && <AddNoteForm />}
+      {(activeDialog === "add-note" || activeDialog === "edit-note") && (
+        <AddNoteForm edit={activeDialog === "edit-note"} note={meta.note} />
+      )}
     </Dialog>
   );
 };

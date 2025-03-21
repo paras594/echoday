@@ -11,6 +11,7 @@ import { DialogsContainer } from "../components/dialogs-container";
 import { useAppStore } from "../store/use-app-store";
 
 import "../styles/home-page.scss";
+import UserReviewWidget from "../components/user-review-widget";
 
 function generate12ColGrid() {
   const cols = [];
@@ -55,6 +56,9 @@ function Home() {
           </GridLayoutItem>
           <GridLayoutItem colSpan={5}>
             <MemoriesBlock />
+          </GridLayoutItem>
+          <GridLayoutItem colSpan={12}>
+            <UserReviewWidget />
           </GridLayoutItem>
         </GridLayout>
       </div>
